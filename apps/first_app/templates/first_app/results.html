@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Results</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/first_app/css/styles.css' %}" />
+  </head>
+  <body>
+        
+    <div class="container">
+        <div class="row">
+            <h1>Welcome to the Results page</h1>
+        </div>
+        <div class="row results">
+            <p>Thank you for submiting this form.  You have submitted this form {{ request.session.session_attempt }} times now.</p>
+            <p>Session count is: {{ request.session.session_count }}</p>
+        </div>
+        <div class="row">
+            <h3><span class="underline">Submitted Information</span></h3>
+            <div class="col">Your Name: </div>
+            <div class="col ">{{ name }}</div>
+        </div>
+        <div class="row">
+            <div class="col">Dojo Location: </div>
+            <div class="col">{{ location }}</div>
+        </div>
+        <div class="row"> 
+            <div class="col">Favorite Language:</div>
+            <div class="col">{{ language }}</div>
+        </div>
+        <div class="row">
+            <div class="col">Comment:</div>
+            <div class="col">{{ comments }}</div>
+        </div>
+
+        <div class="row">
+            <a class="btn btn-primary" href="/" role="button">Go back</a>
+        </div>
+    </div>
+</body>
+</html>
